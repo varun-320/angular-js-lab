@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+ <title>Student Details</title>
+ <script 
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.m
+in.js"></script>
+</head>
+<body>
+<div ng-controller="StudentController as ctrl">
+ <h2>Student Details</h2>
+ <table border="1">
+ <tr>
+ <th>Name</th>
+ <th>CGPA</th>
+ </tr>
+ <tr ng-repeat="student in ctrl.students">
+ <td>{{ student.name | uppercase }}</td>
+ <td>{{ student.cgpa | number:2 }}</td>
+ </tr>
+ </table>
+</div>
+<script src="programm11.js"></script>
+</body>
+</html>
+----------------------------
+var app = angular.module('myApp', []);
+app.controller('StudentController', function () {
+ this.students = [
+ { name: "John Doe", cgpa: 3.8 },
+ { name: "Jane Doe", cgpa: 3.6 },
+ { name: "Peter Parker", cgpa: 3.9 },
+ { name: "Mary Jane Watson", cgpa: 3.7 }
+ ];
+});
