@@ -17,9 +17,9 @@
 <script>
 var app = angular.module("myApp", []);
 app.controller("myCtrl", function($scope) {
- $scope.number = 0;
- $scope.factorial = 0;
- $scope.square = 0;
+ $scope.number = "";
+ $scope.factorial = "";
+ $scope.square = "";
 $scope.calculateFactorial = function() {
  var factorial = 1;
  for (var i = $scope.number; i > 1; i--) {
